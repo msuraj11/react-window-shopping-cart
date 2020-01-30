@@ -44,7 +44,6 @@ const Product = props => {
       ) : (
         dataObj[columnItem]
       );
-    //const renderItem = dataObj[columnItem];
 
     return (
       <div className="data-table-cell" style={style}>
@@ -101,7 +100,6 @@ const Product = props => {
                   onScroll={({ scrollLeft }) => {
                     headerGrid.current.scrollTo({ scrollLeft });
                   }}
-                  //innerElementType={Cell}
                 >
                   {Cell}
                 </VariableSizeGrid>

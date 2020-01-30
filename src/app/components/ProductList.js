@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Product from "./Product";
 import axios from "axios";
-//import images from "../images.json";
 import { connect } from "react-redux"; //to connect react&redux
-//import { bindActionCreators } from 'redux'; //to connect all events
 import * as cartAction from "../actions/cartAction";
 
 class ProductList extends Component {
@@ -35,8 +33,10 @@ class ProductList extends Component {
   }
 
   cartSelected = productSelected => {
-    this.props.actions(productSelected);
-    alert(`${productSelected.name} is added to your wish-list`);
+    //productSelected.uniqueId = Math.floor(Math.random() * 1000);
+    const updatedIdobj = {...productSelected, uniqueId: Math.floor(Math.random() * 1000)};
+    this.props.actions(updatedIdobj);
+    alert(`${updatedIdobj.name} is added to your wish-list         ${JSON.stringify(updatedIdobj)}`);
   };
 
   handleInputChanged = event => {

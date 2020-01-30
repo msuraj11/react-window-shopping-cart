@@ -13,6 +13,7 @@ class Cart extends Component {
   componentDidMount() {
     console.log("in did mount of cart.js");
     this.setState({ cartList: this.props.cart });
+    console.log(this.props.cart);
   }
 
   /*  comoponentWillReceiveProps becomes important when
@@ -23,7 +24,7 @@ class Cart extends Component {
   }
 
   removeToCart = item => {
-    this.props.actionForDelete(item.id);
+    this.props.actionForDelete(item.uniqueId);
   };
 
   emptyCart = () => {
