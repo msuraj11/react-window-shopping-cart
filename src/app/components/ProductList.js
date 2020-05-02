@@ -36,7 +36,7 @@ class ProductList extends Component {
     //productSelected.uniqueId = Math.floor(Math.random() * 1000);
     const updatedIdobj = {...productSelected, uniqueId: Math.floor(Math.random() * 1000)};
     this.props.actions(updatedIdobj);
-    alert(`${updatedIdobj.name} is added to your wish-list         ${JSON.stringify(updatedIdobj)}`);
+    alert(`${updatedIdobj.name} is added to your wish-list`);
   };
 
   handleInputChanged = event => {
